@@ -71,6 +71,7 @@ class GallaryService {
         .instance
         .collection('gallary')
         .where('userUid', isEqualTo: currentAuth!.uid)
+        .orderBy("date", descending: true)
         .get();
     // debugPrint(snapshot.toString());
     for (var doc in snapshot.docs) {
